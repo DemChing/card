@@ -20,11 +20,11 @@
 
     &:before {
         position:absolute;
-        left:-4px;
+        top: -1px;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 12px 6px 0;
+        border-width: 0 8px 6px 0;
         border-color: transparent #ffffff transparent transparent;
     }
 }

@@ -1,0 +1,47 @@
+@import "logo";
+
+.jp-card-logo.jp-card-mir {
+    width: 100px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px 0;
+
+    > div {
+        display: inline-block;
+        color: #046e07;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 900;
+        position: relative;
+
+        &.n {
+            transform: scaleX(-1);
+        }
+
+        &.p {
+            &::before, &::after {
+                content: " ";
+                display: block;
+                position: absolute;
+                margin-top: -20px;
+            }
+
+            &::before {
+                background: #fff;
+                top: 24px;
+                right: 1px;
+                width: 24px;
+                height: 12px;
+            }
+
+            &::after {
+                top: 25px;
+                right: 2px;
+                width: 22px;
+                height: 10px;
+                border-radius: 0 10px;
+                @include linear-gradient( 85deg , #2196f3, #08528d);
+            }
+        }
+    }
+}

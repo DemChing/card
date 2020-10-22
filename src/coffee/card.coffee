@@ -1,7 +1,7 @@
 require '../scss/card.scss'
 
 QJ = require 'qj'
-payment = require 'payment'
+payment = require './payment'
 extend = require 'node.extend'
 
 class Card
@@ -13,7 +13,7 @@ class Card
               '<div class="jp-card-logo jp-card-elo">' +
                 '<div class="e">e</div>' +
                 '<div class="l">l</div>' +
-                '<div class="o">o</div>' +
+                '<div class="o"></div>' +
               '</div>' +
               '<div class="jp-card-logo jp-card-visa">Visa</div>' +
               '<div class="jp-card-logo jp-card-visaelectron">Visa<div class="elec">Electron</div></div>' +
@@ -30,6 +30,18 @@ class Card
                 '<div class="j">J</div>' +
                 '<div class="c">C</div>' +
                 '<div class="b">B</div>' +
+              '</div>' +
+              '<div class="jp-card-logo jp-card-laser">laser</div>' +
+              '<div class="jp-card-logo jp-card-mada"></div>' +
+              '<div class="jp-card-logo jp-card-uatp">uatp</div>' +
+              '<div class="jp-card-logo jp-card-fbf"></div>' +
+              '<div class="jp-card-logo jp-card-hiper"></div>' +
+              '<div class="jp-card-logo jp-card-instapayment"></div>' +
+              '<div class="jp-card-logo jp-card-rupay">RuPay</div>' +
+              '<div class="jp-card-logo jp-card-mir">' +
+                '<div class="m">M</div>' +
+                '<div class="n">N</div>' +
+                '<div class="p">P</div>' +
               '</div>' +
               '<div class="jp-card-lower">' +
                   '<div class="jp-card-shiny"></div>' +
@@ -60,10 +72,16 @@ class Card
     'jp-card-maestro',
     'jp-card-mastercard',
     'jp-card-troy',
-    'jp-card-unionpay',
     'jp-card-visa',
     'jp-card-visaelectron',
     'jp-card-elo',
+    'jp-card-mir',
+    'jp-card-uatp',
+    'jp-card-fbf',
+    'jp-card-hiper',
+    'jp-card-instapayment',
+    'jp-card-rupay',
+    'jp-card-mada',
     'jp-card-hipercard'
   ]
   defaults:
@@ -94,6 +112,7 @@ class Card
       valid: 'jp-card-valid'
       invalid: 'jp-card-invalid'
     debug: false
+    maxYear: -1
 
   constructor: (opts) ->
     @options = extend(true, @defaults, opts)
@@ -202,9 +221,10 @@ class Card
 
   validToggler: (validatorName) ->
     if validatorName == "cardExpiry"
+      maxYear = @options.maxYear
       isValid = (val) ->
         objVal = Payment.fns.cardExpiryVal val
-        Payment.fns.validateCardExpiry objVal.month, objVal.year
+        Payment.fns.validateCardExpiry objVal.month, objVal.year, maxYear
     else if validatorName == "cardCVC"
       isValid = (val) => Payment.fns.validateCardCVC val, @cardType
     else if validatorName == "cardNumber"
@@ -272,6 +292,11 @@ class Card
 
       val = val.join(join)
       val = "" if val == join
+
+      if val.length > 21
+        QJ.addClass out, 'jp-card-number-long'
+      else
+        QJ.removeClass out, 'jp-card-number-long'
 
       for filter in opts.filters
         val = filter(val, el, out)

@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/fbf";
+
+$fill-color: #0a0705;
+
+@include card-template("fbf", $fill-color);

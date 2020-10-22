@@ -3,16 +3,4 @@
 
 $fill-color: #770304;
 
-.jp-card.jp-card-hipercard {
-    &.jp-card-identified {
-        .jp-card-front, .jp-card-back {
-            &:before {
-                background-color: $fill-color;
-            }
-        }
-        .jp-card-logo.jp-card-hipercard {
-            opacity: 1;
-            box-shadow: none;
-        }
-    }
-}
+@include card-template("hipercard", $fill-color);

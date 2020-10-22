@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/hiper";
+
+$fill-color: #645604;
+
+@include card-template("hiper", $fill-color);

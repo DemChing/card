@@ -1,0 +1,30 @@
+@import "logo";
+
+.jp-card-logo.jp-card-instapayment {
+    width: 76px;
+    height: 44px;
+    color: #eee;
+    font-style: normal;
+    text-align: center;
+    background: #0312bc;
+    border-radius: 10px;
+
+    &::before, &::after {
+        display: block;
+    }
+
+    &::before {
+        content: "insta";
+        font-family: "Times New Roman";
+        font-size: 32px;
+        line-height: 22px;
+        padding-top: 6px;
+    }
+
+    &::after {
+        content: "payment";
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}

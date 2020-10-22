@@ -1,0 +1,32 @@
+@import "logo";
+
+.jp-card-logo.jp-card-mada {
+    width: 110px;
+    color: #eee;
+
+    &::before, &::after {
+        display: block;
+        content: " ";
+        position: absolute;
+    }
+
+    &::before {
+        $blue: #2f9ed3;
+        $green: #85bc2c;
+        $dark: #58905f;
+        @include linear-gradient(180deg, $blue, $blue 16px, $dark 16px, $dark 20px, $green 20px, $green 36px);
+        height: $logo-height;
+        width: 40px;
+    }
+
+    &::after {
+        $font-size: 22px;
+        content: "mada";
+        top: ($logo-height - $font-size) / 2;
+        left: 45px;
+        font-size: $font-size;
+        font-style: normal;
+        font-weight: 900;
+        // background: #bf5e10;
+    }
+}

@@ -1,0 +1,43 @@
+@import "logo";
+
+.jp-card-logo.jp-card-laser {
+    $blue: #140855;
+    $pink: #e939bb;
+    $box-size: 50px;
+    $font-offset: 1px;
+    height: $box-size;
+    width: $box-size;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    background: $blue;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: $font-offset;
+
+    &::before, &::after {
+        display: block;
+        position: relative;
+    }
+
+    &::before {
+        $gap: 2px;
+        content: " ";
+        width: $box-size;
+        height: 30px;
+        @include background-image(repeating-linear-gradient(0, $blue 0, $blue $gap, $pink $gap, $pink $gap + 1, $blue $gap * 2, $blue $gap * 3));
+        margin-top: 2px;
+        margin-bottom: 3px;
+        left: -$font-offset;
+    }
+
+    &::after {
+        content: " ";
+        width: $box-size;
+        height: 16px;
+        position: absolute;
+        bottom: 0;
+    }
+}

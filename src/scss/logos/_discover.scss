@@ -2,19 +2,21 @@
 
 .jp-card-logo.jp-card-discover {
     $orange: #FF6600;
-    $offset: 9px;
+    $offset: 12px;
     background: $orange;
     color: #111;
     text-transform: uppercase;
     font-style: normal;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 14px;
     text-align: center;
     overflow: hidden;
     z-index: 1;
     padding-top: $offset;
     letter-spacing: .03em;
     border: 1px solid #EEE;
+    height: 40px;
+    width: 80px;
 
     &:before, &:after {
         content: " ";
@@ -23,27 +25,24 @@
     }
 
     &:before {
-        $size: 200px;
+        $size: 300px;
         background: white;
         width: $size;
         height: $size;
         border-radius: $size;
         bottom: -5%;
-        right: -80%;
+        right: -100%;
         z-index: -1;
     }
 
     &:after {
-        $size: 8px;
+        $size: 12px;
         width: $size;
         height: $size;
         border-radius: $size /2;
-        top: $offset + 1;
-        left: 27px;
-        @include radial-gradient($orange, #fff);
-        content: "network";
-        font-size: 4px;
-        line-height: 24px;
-        text-indent: -7px;
+        top: $offset + 0.5;
+        left: 35.5px;
+        @include linear-gradient($orange, #e91);
+        content: " ";
     }
 }

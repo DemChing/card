@@ -1,0 +1,28 @@
+@import "logo";
+
+.jp-card-logo.jp-card-rupay {
+    width: 84px;
+    color: #eee;
+    font-size: 20px;
+    font-weight: bold;
+
+    &::before, &::after {
+        display: block;
+        content: " ";
+        position: absolute;
+        border-style: solid;
+        border-width: 10px 0 10px 10px;
+        transform: rotate(10deg);
+    }
+
+    &::before {
+        right: 0;
+        border-color: transparent transparent transparent #098624;
+    }
+
+    &::after {
+        right: 5px;
+        top: 0;
+        border-color: transparent transparent transparent #bf5e10;
+    }
+}

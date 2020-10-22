@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/mir";
+
+$fill-color: #0B2C5F;
+
+@include card-template("mir", $fill-color);

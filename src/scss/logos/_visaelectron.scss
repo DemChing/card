@@ -2,15 +2,13 @@
 
 .jp-card-logo.jp-card-visaelectron {
     // display: none;
-    $blue: #1A1876;
-    $yellow: #E79800;
-    background: white;
     text-transform: uppercase;
-    color: $blue;
+    color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 24px;
     line-height: 18px;
+    margin-top:5px;
 
 
     &:before, &:after {
@@ -21,18 +19,20 @@
     }
 
     &:before {
-        background: $blue;
-    }
-
-    &:after {
-        background: $yellow;
+        position:absolute;
+        top: -1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 6px 0;
+        border-color: transparent #ffffff transparent transparent;
     }
     .elec {
         float: right;
         font-family: arial;
         font-size: 9px;
-        margin-right: 1px;
-        margin-top: -5px;
+        margin-right: 3px;
         text-transform: none;
+        font-weight: 100;
     }
 }

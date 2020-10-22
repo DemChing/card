@@ -24,16 +24,19 @@
     }
 
     .o {
+        $percent: 100% / 3;
+        $orange: #fc0;
+        $red: #e32;
+        $blue: #09d;
         position: relative;
         display: inline-block;
         width: 12px;
         height: 12px;
-        right: 0;
-        top: 7px;
+        right: -1px;
+        top: 1px;
         border-radius: 100%;
-        @include background-image(linear-gradient(yellow 50%, red 50%));
+        @include background-image(conic-gradient($orange 0, $orange $percent, $red 0, $red $percent * 2, $blue 0, $blue $percent * 3));
         @include transform(rotate(40deg));
-        text-indent: -9999px;
 
         &:before {
             content: "";
@@ -42,7 +45,6 @@
             height: 49%;
             background: black;
             border-radius: 100%;
-            text-indent: -99999px;
             top: 25%;
             left: 25%;
         }

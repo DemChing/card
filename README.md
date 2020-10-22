@@ -1,10 +1,44 @@
-# Card - check out the **[demo](https://jessepollak.github.io/card)**
+# Card - check out the **[demo](https://demching.github.io/card)**
+
+> This is a modified version of jessepollak's [card](https://github.com/jessepollak/card). You can find the differences [here](#updates).
 
 ### A better credit card form in one line of code
 
 Card will take *any* credit card form and make it the best part of the checkout process (without you changing anything). Everything is created with pure CSS, HTML, and Javascript — no images required.
 
 ![card](http://i.imgur.com/qG3TenO.gif)
+
+## Updates
+
+Here list the modified parts from the original repo:
+
+### CSS
+
+Fixed and modified some CSS that were broken in the original repo: American Express, Discover, Elo, Troy and Visa. 
+
+You can compare the difference from [original](https://jessepollak.github.io/card) and [updated](https://demching.github.io/card).
+
+### Card Types
+
+Add some card types: Forbrugsforeningen, Hiper (Similar to Hipercard), InstaPayment, Laser, mada, Mir, RuPay and UATP.
+
+The card formats are collected from the internet. It is not guaranteed that they are correct.
+
+### Expiry Validation
+
+Original version only check if the date is equal or larger than current month. This repo allows you to limit the year range simailar to what some payment provider do.
+
+Specify `maxYear` in the config to reject cards with expiry year larger than `currentYear + maxYear`.
+
+```javascript
+var card = new Card({
+    maxYear: 30, // For 2020, the maximum accepted expiry year would be 2050.
+})
+```
+
+### Node Dependency
+
+To add new feature, modification of the dependency is required. So I removed the Node module `payment` (also the git submodule) and clone the main script to `src/coffee/payment.coffee`.
 
 ## Usage (without jQuery)
 
@@ -54,6 +88,8 @@ var card = new Card({
     masks: {
         cardNumber: '•' // optional - mask card number
     },
+
+    maxYear: 10, // optional - maximum expiry year from now, default -1 (no limit)
 
     // if true, will log helpful messages for setting up Card
     debug: false // optional - default false
@@ -197,32 +233,16 @@ $('form').card({
 ```
 ## Using with other javascript libraries
 
-Card has wrappers that make it easy to use with other javascript libraries:
+Card has wrappers that make it easy to use with other javascript libraries but they only support the original repo.
 
-### Angular 1.x
-
-* [angular-card](https://github.com/gavruk/angular-card)
-
-### Angular 2+
-
-* [ngx-card](https://github.com/ihym/ngx-card)
-
-### Ember
-
-* [ember-credit-card](https://github.com/esbanarango/ember-credit-card)
-
-### React
-
-* [react-credit-card](https://github.com/JohnyDays/react-credit-card)
-* [card-react](https://github.com/shatran/card-react)
-* [react-plastic](https://github.com/armsteadj1/react-plastic) - static CSS only version.
+You may want to check the related libraries [here](https://github.com/jessepollak/card#using-with-other-javascript-libraries) from the original repo.
 
 ## Development
 
 To contribute, follow this steps:
 
 ```bash
-$ git clone --recursive https://github.com/jessepollak/card.git
+$ git clone --recursive https://github.com/DemChing/card.git
 $ cd card
 $ git submodule init && git submodule update
 $ npm install
@@ -231,35 +251,12 @@ $ npm run development
 
 Now, if you go to localhost:8080/example in your browser, you should see the demo page.
 
-## Places using Card
-
-Card is used in the wild in these places:
-
-* [InspectAll](http://www.inspectall.com/)
-* [PennyWhale](https://www.pennywhale.com/)
-* [MakeSpace](https://www.makespace.com/)
-* [Blumpa](http://www.blumpa.com/)
-* [CourseLoads](http://www.courseloads.com/)
-* [PubNub](http://pubnub.com/)
-* [GigSalad](https://www.gigsalad.com)
-* [Boligninja](http://www.boligninja.dk)
-* [EasyCarros](http://www.easycarros.com/)
-* [Sintelle](http://www.sintelleparapharmacie.com/)
-* [Wevorce](http://wevorce.com/)
-* [PayumServer](https://github.com/Payum/PayumServer)
-* [Paribus](https://paribus.co)
-* [Bizzabo](https://www.bizzabo.com)
-* [Tortuba](https://www.tortuba.com)
-* [Netlify](https://www.netlify.com)
-* [The Spice House](https://www.thespicehouse.com/)
-* [Touts](https://www.touts.com.br/)
-* [Ryman Limited](http://www.ryman.co.uk)
-* [Robert Dyas](http://www.robertdyas.co.uk)
-* [ROKA](https://www.rokahub.com)
-* [LeSalon](https://lesalon.com)
-
-Are you using Card in production? If so, we'd love to link to you from this page. Open a PR or drop [@jessepollak](http://twitter.com/jessepollak) a line on [Twitter](http://twitter.com/jessepollak) and we'll add you right away!
-
 ## Donations
 
-If you'd like to donate to help support development of Card, send Bitcoin directly to `17NUKd3v7GWben18kGhmFafa4ZpWrXpQSC` or through Coinbase [here](https://coinbase.com/jessepollak).
+You may want to support the developer [jessepollak](https://github.com/jessepollak) that made the foundation of this repository.
+
+His donation detail are located [here](https://github.com/jessepollak/card#donations).
+
+Or You can buy me a coffee:
+
+<a href="https://www.buymeacoffee.com/demching" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>

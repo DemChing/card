@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/mada";
+
+$fill-color: #03580e;
+
+@include card-template("mada", $fill-color);

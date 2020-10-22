@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/rupay";
+
+$fill-color: #151515;
+
+@include card-template("rupay", $fill-color);

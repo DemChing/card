@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/laser";
+
+$fill-color: #142c55;
+
+@include card-template("laser", $fill-color, true);

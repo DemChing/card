@@ -1,0 +1,24 @@
+@import "logo";
+
+.jp-card-logo.jp-card-fbf {
+    height: 30px;
+    width: auto;
+    color: #5386d3;
+    font-size: 21px;
+    font-style: normal;
+    text-transform: uppercase;
+
+    &::before, &::after {
+        display: block;
+        position: relative;
+    }
+
+    &::before {
+        content: "forbrugs";
+        font-weight: 900;
+    }
+
+    &::after {
+        content: "foreningen";
+    }
+}

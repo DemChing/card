@@ -1,0 +1,38 @@
+@import "logo";
+
+.jp-card-logo.jp-card-hiper {
+    $box-size: 70px;
+    $box-offset: 10px;
+    $font-size: 20px;
+    height: 40px;
+    width: $box-size;
+    color: #eee;
+    font-size: $font-size;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+
+    &::before, &::after {
+        display: block;
+        position: absolute;
+    }
+
+    &::before {
+        content: " ";
+        height: $box-size - $box-offset;
+        width: $box-size - $box-offset;
+        transform: rotateZ(-20deg);
+        background: #f17730;
+        left: $box-offset - 3;
+        top: $box-offset - 3;
+        border-radius: $box-offset;
+    }
+
+    &::after {
+        content: "Hiper";
+        height: $font-size;
+        width: $box-size;
+        top: $box-offset * 2 - 3;
+    }
+}

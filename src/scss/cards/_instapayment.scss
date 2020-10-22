@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/instapayment";
+
+$fill-color: #301f5f;
+
+@include card-template("instapayment", $fill-color, true);

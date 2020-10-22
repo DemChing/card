@@ -1,0 +1,6 @@
+@import "card";
+@import "../logos/uatp";
+
+$fill-color: #363636;
+
+@include card-template("uatp", $fill-color);

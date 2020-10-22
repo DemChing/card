@@ -7,15 +7,15 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 18px;
-    margin-top: 5px
+    margin-top: 5px;
 
 
     &:before, &:after {
-        content: \"\";
+        content: " ";
         display: block;
         width: 26%;
         height: 6%;
-        background: #22b8c3;
+        background: #34bdc7;
         right: 32%;
         top: 24%;
         position: absolute;

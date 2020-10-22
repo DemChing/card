@@ -11,17 +11,11 @@ $highlight-color: #FF6600;
     }
 }
 
+@include card-template("discover", $fill-color);
+
 .jp-card.jp-card-discover {
 
     &.jp-card-identified {
-        .jp-card-front, .jp-card-back {
-            &:before {
-                background-color: $fill-color;
-            }
-        }
-        .jp-card-logo.jp-card-discover {
-            opacity: 1;
-        }
 
         .jp-card-front {
             &:after {
